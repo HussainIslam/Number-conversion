@@ -71,6 +71,7 @@ void convertToBinary(int decimalNumber, char binaryNumber[], int index)
 void printResult(long decimalNumber, char binaryNumber[])
 {
 	int i=0;
+	printf("\n");
 	printf("Converted numbers: \n");
 	printf("Binary\t");
 	// print the binary digits until the null byte is found
@@ -100,4 +101,24 @@ void clearKeyboard()
 {
 	while (getchar() != '\n')
 		;
+}
+
+//getting the reponse of the user to try again
+int tryAgain(void){
+	int retvalue;
+	char choice;
+	do{
+		printf("Do you want to convert another number (Y)es/(N)o: ");
+		choice  = getchar();
+		clearKeyboard();
+		if(!(choice == 'Y' || choice == 'y' || choice =='N' || choice == 'n')){
+			printf("Please enter a valid choice, \'n\' or \'N\' to exit the program, \'y\' or \'Y\' to convert another number. \n");
+		}
+	}while(!(choice == 'Y' || choice == 'y' || choice =='N' || choice == 'n'));		
+	if (choice == 'Y' || choice == 'y') retvalue = 1;
+	else retvalue = 0;
+	if(retvalue == 0){
+		printf("Thank you for using number conversion system.Good bye!\n");
+	}
+	return retvalue;
 }

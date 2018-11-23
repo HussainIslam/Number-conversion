@@ -50,6 +50,7 @@ int main(void)
 			decimalNumber=convertToDecimal(binaryNumber, INDEX);
 			// print the result using function
 			printResult(decimalNumber, binaryNumber);
+			choice = tryAgain();
 			break;
 		case 2:
 			// convert decimal number
@@ -72,6 +73,7 @@ int main(void)
 			convertToBinary(decimalNumber, binaryNumber, INDEX);
 			// print result using function
 			printResult(decimalNumber, binaryNumber);
+			choice = tryAgain();
 			break;
 
 		case 3:
@@ -95,6 +97,7 @@ int main(void)
 			convertToBinary(octalNumber, binaryNumber, INDEX);
 			// print result using function
 			printResult(octalNumber, binaryNumber);
+			choice = tryAgain();
 			break;
 
 		case 4:
@@ -118,12 +121,14 @@ int main(void)
 			convertToBinary(hexNumber, binaryNumber, INDEX);
 			// print result using function
 			printResult(hexNumber, binaryNumber);
+			choice = tryAgain();
 			break;
 		case 0:
 			// exit program
 			printf("Thank you for using number conversion system.Good bye!\n");
 		}
-	} while (choice > 4 || choice < 0);
+		//loop until the option is within this range
+	} while (choice != 0);
 
 	return 0;
 }

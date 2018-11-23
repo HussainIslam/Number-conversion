@@ -9,3 +9,4 @@ void convertToBinary(int decimalNumber, char binaryNumber[], int index);
 void printResult(long, char[]);
 void printWelcome();
 void clearKeyboard();
+int tryAgain(void);
